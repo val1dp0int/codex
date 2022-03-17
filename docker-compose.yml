@@ -1,0 +1,12 @@
+services:
+  codex:
+      env_file: .env
+      image: docker.io/ajslater/codex
+      container_name: codex
+      volumes:
+          - /portainer/AppData/codex/config:/config
+          - /srv/dev-disk-by-label-FILES/Torrentz/COMIC:/comics:ro
+      ports:
+          - 9810:9810
+      restart: on-failure
+
